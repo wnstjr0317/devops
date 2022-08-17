@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "http://k8s-3tiermsa-frontend-b549c3fc06-2039054978.ap-northeast-2.elb.amazonaws.com")
+@CrossOrigin(origins = "http://<Frontend Ingress Adress>")
 @RequiredArgsConstructor
 public class CourseController {
 

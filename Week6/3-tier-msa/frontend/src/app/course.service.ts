@@ -9,30 +9,30 @@ export class CourseService {
   constructor(private http: HttpClient) {}
 
   public postCourse(course: Course) {
-    return this.http.post('http://k8s-3tiermsa-backend-66b76d4265-408483916.ap-northeast-2.elb.amazonaws.com/postcourse', course, {
+    return this.http.post('http://<Backend Ingress Address>/postcourse', course, {
       responseType: 'text' as 'json',
     });
   }
 
   public updateCourse(course: Course) {
-    return this.http.put('http://k8s-3tiermsa-backend-66b76d4265-408483916.ap-northeast-2.elb.amazonaws.com/updatecourse', course, {
+    return this.http.put('http://<Backend Ingress Address>/updatecourse', course, {
       responseType: 'text' as 'json',
     });
   }
 
   public getCourses() {
-    return this.http.get('http://k8s-3tiermsa-backend-66b76d4265-408483916.ap-northeast-2.elb.amazonaws.com/getallcourses');
+    return this.http.get('http://<Backend Ingress Address>/getallcourses');
   }
 
   public getCourseById(courseId: number) {
     return this.http.get(
-      'http://k8s-3tiermsa-backend-66b76d4265-408483916.ap-northeast-2.elb.amazonaws.com/getcoursebyid?courseId=' + courseId
+      'http://<Backend Ingress Address>/getcoursebyid?courseId=' + courseId
     );
   }
 
   public deleteCourse(courseId: number) {
     return this.http.delete(
-      'http://k8s-3tiermsa-backend-66b76d4265-408483916.ap-northeast-2.elb.amazonaws.com/deletecourse?courseId=' + courseId
+      'http://<Backend Ingress Address>/deletecourse?courseId=' + courseId
     );
   }
 }

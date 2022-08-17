@@ -53,8 +53,8 @@
 #
 #      - name: git push
 #        run: |
-#          git config --global user.email "skwjdgh1@gmail.com"
-#          git config --global user.name "Najeongho"
+#          git config --global user.email "<Your Email Address>"
+#          git config --global user.name "<Your Name>"
 #          git pull origin main
 #          git add values.yaml
 #          git commit -m "[feat] trigger to deploy frontend container to kubernetes"

@@ -13,7 +13,7 @@ spec:
         app.kubernetes.io/name: app-test
     spec:
       containers:
-      - image: 347880001135.dkr.ecr.ap-northeast-2.amazonaws.com/test:1.0
+      - image: <AWS ECR URL>/test:1.0
         imagePullPolicy: Always
         name: app-test
         ports:
