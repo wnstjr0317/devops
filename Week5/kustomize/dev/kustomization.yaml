@@ -1,6 +1,0 @@
-bases:
-- ../base
-namePrefix: dev-
-patchesStrategicMerge:
-- incr_replica.yaml
-- set_memory.yaml

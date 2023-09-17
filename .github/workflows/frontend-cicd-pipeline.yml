@@ -42,7 +42,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./Week6/kubernetes/helm-charts/frontend
+        working-directory: ./Week6/helm-charts/frontend
 
     steps:
       - uses: actions/checkout@v2

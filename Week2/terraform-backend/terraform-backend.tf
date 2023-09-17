@@ -8,7 +8,7 @@ resource "aws_s3_bucket" "test-s3-tf-state" {
   
 }
 
-resource "aws_dynamodb_table" "<AWS DynamoDB Table Name>" {
+resource "aws_dynamodb_table" "test-ddb-tflock-state" {
 
   depends_on   = [aws_s3_bucket.test-s3-tf-state]
   name         = "<AWS DynamoDB Table Name>"
