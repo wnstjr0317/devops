@@ -23,3 +23,6 @@ build/
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
+
+.idea
+.idea/misc.xml

@@ -23,10 +23,10 @@ resource "aws_subnet" "test-public-subnet" {
   tags = {
 
     // 서브넷 별 태그 번호 순차 변경
-    Name                                     = "test-public-subnet${count.index+1}"
+    Name = "test-public-subnet${count.index+1}"
 
     // 서브넷에 로드 밸런서 배포시 필요한 태그 - 퍼블릭 서브넷
-    "kubernetes.io/role/elb"                 = 1
+    "kubernetes.io/role/elb" = 1
   }
 
 }
