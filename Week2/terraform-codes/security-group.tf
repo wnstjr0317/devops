@@ -85,7 +85,7 @@ resource "aws_security_group" "test-eks_sg_nodes" {
     from_port = 0
     to_port   = 0
     protocol  = -1
-    self      = true
+    self      = false
   }
 
   egress {
