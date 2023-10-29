@@ -17,4 +17,4 @@ spec:
         imagePullPolicy: Always
         name: app-test
         ports:
-        - containerPort: 80
+        - containerPort: 8080
