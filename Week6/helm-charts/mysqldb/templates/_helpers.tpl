@@ -1,15 +1,20 @@
+{{/*
+Copyright VMware, Inc.
+SPDX-License-Identifier: APACHE-2.0
+*/}}
+
 {{/* vim: set filetype=mustache: */}}
 
 {{- define "mysql.primary.fullname" -}}
 {{- if eq .Values.architecture "replication" }}
-{{- printf "%s-%s" (include "common.names.fullname" .) "primary" | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s-%s" (include "common.names.fullname" .) .Values.primary.name | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
 {{- include "common.names.fullname" . -}}
 {{- end -}}
 {{- end -}}
 
 {{- define "mysql.secondary.fullname" -}}
-{{- printf "%s-%s" (include "common.names.fullname" .) "secondary" | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s-%s" (include "common.names.fullname" .) .Values.secondary.name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 {{/*
@@ -48,6 +53,17 @@ Get the initialization scripts ConfigMap name.
     {{- printf "%s" (tpl .Values.initdbScriptsConfigMap $) -}}
 {{- else -}}
     {{- printf "%s-init-scripts" (include "mysql.primary.fullname" .) -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Get the startdb scripts ConfigMap name.
+*/}}
+{{- define "mysql.startdbScriptsCM" -}}
+{{- if .Values.startdbScriptsConfigMap -}}
+    {{- printf "%s" (tpl .Values.startdbScriptsConfigMap $) -}}
+{{- else -}}
+    {{- printf "%s-start-scripts" (include "mysql.primary.fullname" .) -}}
 {{- end -}}
 {{- end -}}
 
