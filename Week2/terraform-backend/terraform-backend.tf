@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "test-s3-tf-state" {
 
   // 버킷 이름
-  bucket = "comento-s3-bucket-testuser"
+  bucket = "comento-s3-bucket-testuser-pjs"
 
   // 태그명
   tags = {
@@ -16,7 +16,7 @@ resource "aws_dynamodb_table" "test-ddb-tflock-state" {
   depends_on = [aws_s3_bucket.test-s3-tf-state]
 
   // 테이블 이름
-  name = "comento-ddb-table-testuser"
+  name = "comento-ddb-table-testuser-pjs"
 
   // 파티션 키
   attribute {
