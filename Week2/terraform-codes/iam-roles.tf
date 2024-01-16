@@ -100,4 +100,4 @@ POLICY
 # resource "aws_iam_role_policy_attachment" "test-eks_iam_cluster_AmazonEKS_CNI_Policy" {
 #  role = aws_iam_role.test-eks_iam_nodes.name
 #  policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
-}
+# }
